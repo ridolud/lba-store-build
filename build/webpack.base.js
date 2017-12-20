@@ -74,7 +74,7 @@ module.exports = {
       {
         from: _.cwd('./static'),
         // to the root of dist path
-        to: './'
+        to: './asset'
       }
     ])
   ],

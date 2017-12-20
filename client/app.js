@@ -3,12 +3,12 @@ import { sync } from 'vuex-router-sync'
 import App from './components/App'
 import router from './router'
 import store from './store'
-import LbaHermes from '../../storeage/themes/hermes/dist/lba-theme-hermes.js'
 
-Vue.use(LbaHermes)
+const LbaConfig = require('../lba-config.js')
+Vue.use(LbaConfig.theme_config.theme_pack)
 
 sync(store, router)
- 
+
 const app = new Vue({
   router,
   store,

@@ -21,12 +21,20 @@ _.cssProcessors = [
   {loader: 'sass-loader?indentedSyntax&sourceMap', test: /\.sass$/},
 ]
 
-_.outputPath = config.electron ?
-  path.join(__dirname, '../app/dist') :
+// _.outputPath = config.electron ?
+//   path.join(__dirname, '../app/dist') :
+//   path.join(__dirname, '../dist')
+
+// _.outputIndexPath = config.electron ?
+//   path.join(__dirname, '../app/dist/index.html') :
+//   path.join(__dirname, '../dist/index.html')
+
+_.outputPath = process.env.NODE_ENV == 'production' ?
+  path.join(__dirname, '../../store') :
   path.join(__dirname, '../dist')
 
-_.outputIndexPath = config.electron ?
-  path.join(__dirname, '../app/dist/index.html') :
+_.outputIndexPath = process.env.NODE_ENV == 'production' ?
+  path.join(__dirname, '../../store/index.html') :
   path.join(__dirname, '../dist/index.html')
 
 _.target = config.electron ?
